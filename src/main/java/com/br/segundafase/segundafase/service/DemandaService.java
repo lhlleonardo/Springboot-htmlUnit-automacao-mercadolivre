@@ -38,12 +38,9 @@ public class DemandaService {
 
                 HtmlSpan precoProduto = r.getFirstByXPath(meliResultado.precoItemPath);
                 HtmlHeading2 descricaoProduto = r.getFirstByXPath(meliResultado.descricaoItemPath);
-                HtmlImage imagemProduto = r.getFirstByXPath(".//div[@class='ui-search-result__image']//img[@class='ui-search-result-image__element']");
-                //String imagemProduto = "Leo";
+                HtmlImage imagemProduto = r.getFirstByXPath(meliResultado.imagemItemPath);
 
-                System.out.println(imagemProduto);
-
-                demanda.adicionarProduto(new Produto(descricaoProduto.getTextContent(), precoProduto.getTextContent(), imagemProduto.getTextContent()));
+                demanda.adicionarProduto(new Produto(descricaoProduto.getTextContent(), precoProduto.getTextContent(), imagemProduto.getSrc()));
             }
 
             if (botaoProximo != null) {
