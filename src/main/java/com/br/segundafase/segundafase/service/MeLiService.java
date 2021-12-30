@@ -11,17 +11,15 @@ public class MeLiService {
 
     WebClient webClient = new DriverConfig().chromeDriver();
 
-    MeliHome meliHome = new MeliHome();
-
     public HtmlPage mercadoLivreBuscarItem(String item) throws IOException {
 
-        HtmlPage page = webClient.getPage(meliHome.url);
+        HtmlPage page = webClient.getPage(MeliHome.URL);
 
-        HtmlInput campoBusca = page.getFirstByXPath(meliHome.campoBuscaPath);
+        HtmlInput campoBusca = page.getFirstByXPath(MeliHome.CAMPO_BUSCA_PATH);
 
         campoBusca.setValueAttribute(item);
 
-        HtmlButton botaoBusca = page.getFirstByXPath(meliHome.botaoBuscarPath);
+        HtmlButton botaoBusca = page.getFirstByXPath(MeliHome.BOTAO_BUSCA_PATH);
 
         HtmlPage resultadoBusca = botaoBusca.click();
 

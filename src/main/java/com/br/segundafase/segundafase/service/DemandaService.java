@@ -12,16 +12,14 @@ public class DemandaService {
 
     MeLiService meLiService = new MeLiService();
 
-    MeliResultado meliResultado = new MeliResultado();
-
     public String retornarItemProcurado(String item) throws IOException {
 
         HtmlPage resultadoBusca = meLiService.mercadoLivreBuscarItem(item);
 
-        HtmlHeading1 itemBuscado = resultadoBusca.getFirstByXPath(meliResultado.itemBuscadoPath);
-        HtmlSpan quantidadeResultados = resultadoBusca.getFirstByXPath(meliResultado.quantidadeResultadosPath);
-        HtmlListItem totalPaginas = resultadoBusca.getFirstByXPath(meliResultado.quantidadePaginasPath);
-        HtmlAnchor botaoProximo = resultadoBusca.getFirstByXPath(meliResultado.botaoProximaPath);
+        HtmlHeading1 itemBuscado = resultadoBusca.getFirstByXPath(MeliResultado.ITEM_BUSCADO_PATH);
+        HtmlSpan quantidadeResultados = resultadoBusca.getFirstByXPath(MeliResultado.QTDE_RESULTADOS_PATH);
+        HtmlListItem totalPaginas = resultadoBusca.getFirstByXPath(MeliResultado.QTDE_PAGINAS_PATH);
+        HtmlAnchor botaoProximo = resultadoBusca.getFirstByXPath(MeliResultado.BOTAO_PROXIMO_PATH);
 
         String paginas = totalPaginas.getTextContent().replaceAll("\\D+","");
 
@@ -32,13 +30,13 @@ public class DemandaService {
 
         for (int i = 1; i <= Integer.parseInt(paginas); i++) {
 
-            List<HtmlDivision> resultados = resultadoBusca.getByXPath(meliResultado.resultadosPath);
+            List<HtmlDivision> resultados = resultadoBusca.getByXPath(MeliResultado.RESULTADOS_PATH);
 
             for (HtmlDivision r : resultados) {
 
-                HtmlSpan precoProduto = r.getFirstByXPath(meliResultado.precoItemPath);
-                HtmlHeading2 descricaoProduto = r.getFirstByXPath(meliResultado.descricaoItemPath);
-                HtmlImage imagemProduto = r.getFirstByXPath(meliResultado.imagemItemPath);
+                HtmlSpan precoProduto = r.getFirstByXPath(MeliResultado.PRECO_ITEM_PATH);
+                HtmlHeading2 descricaoProduto = r.getFirstByXPath(MeliResultado.DESCRICAO_ITEM_PATH);
+                HtmlImage imagemProduto = r.getFirstByXPath(MeliResultado.IMAGEM_ITEM_PATH);
 
                 demanda.adicionarProduto(new Produto(descricaoProduto.getTextContent(), precoProduto.getTextContent(), imagemProduto.getSrc()));
             }
