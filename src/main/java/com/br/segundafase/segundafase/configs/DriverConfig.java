@@ -2,8 +2,17 @@ package com.br.segundafase.segundafase.configs;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class DriverConfig {
+
+    @Bean
+    public WebClient chrome() { return chromeDriver(); }
+
+    @Bean
+    public WebClient firefox() { return firefoxDrive(); }
 
     public WebClient chromeDriver() {
 
