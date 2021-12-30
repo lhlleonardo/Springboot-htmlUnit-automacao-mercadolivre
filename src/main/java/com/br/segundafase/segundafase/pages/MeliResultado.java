@@ -1,5 +1,10 @@
 package com.br.segundafase.segundafase.pages;
 
+/*
+ @Author: Leonardo Henrique Lopes
+ @Date: 30/12/2021
+*/
+
 public class MeliResultado {
 
     public static final String ITEM_BUSCADO_PATH = "//h1[@class='ui-search-breadcrumb__title']";

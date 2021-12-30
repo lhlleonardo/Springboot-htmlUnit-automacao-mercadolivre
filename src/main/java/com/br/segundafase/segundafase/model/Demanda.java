@@ -3,6 +3,11 @@ package com.br.segundafase.segundafase.model;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+ @Author: Leonardo Henrique Lopes
+ @Date: 30/12/2021
+*/
+
 public class Demanda {
 
     String itemDemanda;

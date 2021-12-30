@@ -1,5 +1,10 @@
 package com.br.segundafase.segundafase.model;
 
+/*
+ @Author: Leonardo Henrique Lopes
+ @Date: 30/12/2021
+*/
+
 public class Produto {
 
     String descricao;

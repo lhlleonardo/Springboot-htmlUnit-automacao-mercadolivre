@@ -5,6 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+/*
+ @Author: Leonardo Henrique Lopes
+ @Date: 30/12/2021
+*/
+
 @Component
 public class Schedule {
 

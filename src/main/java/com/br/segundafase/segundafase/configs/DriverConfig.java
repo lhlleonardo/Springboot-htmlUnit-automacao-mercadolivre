@@ -5,6 +5,11 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/*
+ @Author: Leonardo Henrique Lopes
+ @Date: 30/12/2021
+*/
+
 @Configuration
 public class DriverConfig {
 
