@@ -16,7 +16,7 @@ public class DemandaService {
 
     public String retornarItemProcurado(String item) throws IOException {
 
-        HtmlPage resultadoBusca = meLiService.mercadoLivreBuscarItem("kindle");
+        HtmlPage resultadoBusca = meLiService.mercadoLivreBuscarItem(item);
 
         HtmlHeading1 itemBuscado = resultadoBusca.getFirstByXPath(meliResultado.itemBuscadoPath);
         HtmlSpan quantidadeResultados = resultadoBusca.getFirstByXPath(meliResultado.quantidadeResultadosPath);
