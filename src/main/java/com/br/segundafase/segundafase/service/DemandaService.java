@@ -4,13 +4,17 @@ import com.br.segundafase.segundafase.model.Demanda;
 import com.br.segundafase.segundafase.model.Produto;
 import com.br.segundafase.segundafase.pages.MeliResultado;
 import com.gargoylesoftware.htmlunit.html.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class DemandaService {
 
-    MeLiService meLiService = new MeLiService();
+    @Autowired
+    MeLiService meLiService;
 
     public String retornarItemProcurado(String item) throws IOException {
 
