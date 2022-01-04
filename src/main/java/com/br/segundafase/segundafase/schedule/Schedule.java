@@ -1,6 +1,7 @@
 package com.br.segundafase.segundafase.schedule;
 
 import com.br.segundafase.segundafase.service.DemandaService;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,8 @@ public class Schedule {
     @Autowired
     public DemandaService demandaService;
 
-    @Scheduled(fixedDelay = 10000)
+    @RabbitListener(queues = "${spring.rabbitmq.queue}")
+    @Scheduled(fixedDelay = 1000)
     public void iniciar(){
 
         boolean resultado = true;
