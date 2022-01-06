@@ -39,7 +39,7 @@ public class Schedule {
 
         } finally {
 
-            if ( resultado ) System.out.println("Finalizado com sucesso...");
+            System.out.println("O processo está sendo finalizado...");
 
         }
     }
