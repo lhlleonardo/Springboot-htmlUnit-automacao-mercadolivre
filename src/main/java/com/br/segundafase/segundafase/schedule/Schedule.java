@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
  @Date: 30/12/2021
 */
 
-@Component
+//@Component
 public class Schedule {
 
+    /*
     @Autowired
     public DemandaService demandaService;
 
@@ -43,4 +44,5 @@ public class Schedule {
 
         }
     }
+    */
 }

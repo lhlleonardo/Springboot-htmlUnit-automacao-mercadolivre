@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    requested-heartbeat: 30
+    host: ip
+    username: user
+    password: password
+    port: port
+    listener:
+      simple:
+        concurrency: 1
+        max-concurrency: 1
+        prefetch: 1
+    queue: queue
